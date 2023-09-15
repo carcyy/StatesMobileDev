@@ -11,37 +11,38 @@ struct ContentView: View {
     var body: some View {
             
         ZStack {
-            NavigationView {
+            NavigationView { 
                 VStack {
-                    NavigationLink("Home") {
-                
+                    NavigationLink("Setting") {
+                        Text("Here's where you would change your settings.")
                     }.offset(CGSize(width: 10, height: -300))
-                    NavigationLink("Other") {
-                        
-                    }.offset(CGSize(width: 10, height: -300))
+                    NavigationLink("Enter") {
+                        VStack{
+                            TabView {
+                                HelloPageView()
+                                    .tabItem {
+                                        Text("Home")
+                                    }
+                                OtherPageView()
+                                    .tabItem {
+                                        Text("Other")
+                                    }
+                                AlertPageView()
+                                    .tabItem {
+                                        Text("Alert")
+                                    }
+                                ModalSheetView()
+                                    .tabItem {
+                                        Text("Sheet")
+                                    }
+                            }.background(GradientBack())
+                        }
+                    }
+                    .offset(CGSize(width: 10, height: -300))
+                    }
                 }
             }.navigationTitle("Page Options")
                 .offset(CGSize(width: -30, height: 0))
-            
-                TabView {
-                    HelloPageView()
-                        .tabItem {
-                            Text("Home")
-                        }
-                    OtherPageView()
-                        .tabItem {
-                            Text("Other")
-                        }
-                    AlertPageView()
-                        .tabItem {
-                            Text("Alert")
-                        }
-                    ModalSheetView()
-                        .tabItem {
-                            Text("Sheet")
-                        }
-                }
-        }.background(GradientBack())
     }
 }
         
