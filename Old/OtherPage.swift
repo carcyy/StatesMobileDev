@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct OtherPageView: View {
-    @State private var meows = ""//empty string state, https://developer.apple.com/documentation/swiftui/state
+
     var body: some View {
         
         VStack {
