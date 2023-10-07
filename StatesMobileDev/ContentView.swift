@@ -16,7 +16,7 @@ struct ContentView: View {
        var body: some View {
            TabView {
                NavigationStack {
-                   homeViewModel.HomeView()
+                   HomeView()
                        .navigationTitle("Welcome")
                        .environmentObject(homeViewModel)
                }
@@ -24,7 +24,7 @@ struct ContentView: View {
                    Label("Home", systemImage: "house.fill")
                }
                 NavigationStack {
-                    otherViewModel.OtherView()
+                    OtherView()
                         .navigationTitle("Cat")
                         .background(GradientBack())
                         .environmentObject(otherViewModel)
@@ -33,7 +33,7 @@ struct ContentView: View {
                     Label("Other", systemImage: "questionmark.app.fill")
                 }
                 NavigationStack {
-                    alertViewModel.AlertView()
+                    AlertView()
                         .navigationTitle("Alert Example")
                         .environmentObject(alertViewModel)
                 }
@@ -41,7 +41,7 @@ struct ContentView: View {
                     Label("Alert", systemImage: "hand.raised.square.on.square.fill")
                 }
                 NavigationStack {
-                    modalViewModel.ModalView()
+                    ModalView()
                         .navigationTitle("Modal Sheet Example")
                         .environmentObject(modalViewModel)
                 }
@@ -50,7 +50,7 @@ struct ContentView: View {
                 }
                 
                 NavigationStack {
-                    apiViewModel.ApiView()
+                    ApiView()
                         .navigationTitle("API Import Example")
                         .environmentObject(apiViewModel)
                 }
